@@ -9,6 +9,7 @@ export default {
         androidAssassin: "Android Assassin",
         starCruiser: "Starcruiser",
         RobotoCondensed: "Roboto Condensed",
+        lobster: "Lobster",
       },
       animation: {
         tilt: "tilt 10s infinite linear",
