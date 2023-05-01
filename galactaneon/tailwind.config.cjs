@@ -8,9 +8,11 @@ export default {
         Galacticagrid: "Galactica grid",
         androidAssassin: "Android Assassin",
         starCruiser: "Starcruiser",
+        RobotoCondensed: "Roboto Condensed",
       },
       animation: {
         tilt: "tilt 10s infinite linear",
+        moving: "moving 2s linear infinite",
       },
       keyframes: {
         tilt: {
@@ -22,6 +24,14 @@ export default {
           },
           "75%": {
             transform: "rotate(-1deg)",
+          },
+        },
+        moving: {
+          "0%": {
+            left: "-20px",
+          },
+          "100%": {
+            left: "100%",
           },
         },
       },
