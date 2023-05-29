@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import navItemClickAudio from "../assets/media/audio/Sound Effect sci fi beep electric 2.mp3";
 import LoginIcon from "@mui/icons-material/Login";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
-import DarkModeToggle from "./DarkModeToggle";
 import { NavLink } from "react-router-dom";
+import { ThemeContext } from "../context/Theme";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 const Navbar = () => {
-  const [darkmodeEnabled, setDarkModeEnabled] = useState<boolean>(false);
+  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 
   const navLinkAudio = new Audio(navItemClickAudio);
 
@@ -21,10 +22,10 @@ const Navbar = () => {
   //   navLinkAudio.pause();
   // };
   return (
-    <header className={darkmodeEnabled ? "dark" : ""}>
+    <header className={isDarkMode ? "dark" : ""}>
       <div className="dark:bg-black py-3">
         <nav>
-          <ul className="flex uppercase items-center justify-between tracking-wide dark:text-blue-600">
+          <ul className="flex uppercase items-center justify-between tracking-wide dark:text-blue-600 text-black sm:flex-col md:flex-row lg:flex-row">
             <h3 className="uppercase bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 inline-block text-transparent bg-clip-text font-Galacticagrid font-bold text-3xl">
               Galactaneon
             </h3>
@@ -34,28 +35,28 @@ const Navbar = () => {
               // onMouseOver={onStop}
             >
               <NavLink to={"/"}>
-                <li className="font-androidAssassin font-semibold text-xl dark:hover:text-pink-600">
+                <li className="font-androidAssassin font-semibold text-xl uppercase dark:hover:text-pink-600">
                   home
                 </li>
               </NavLink>
             </button>
             <button onClick={navClick}>
               <NavLink to={"/about"}>
-                <li className="font-androidAssassin font-semibold text-xl dark:hover:text-pink-600">
+                <li className="font-androidAssassin font-semibold text-xl uppercase dark:hover:text-pink-600">
                   about
                 </li>
               </NavLink>
             </button>
             <button onClick={navClick}>
               <NavLink to={"/cosplay"}>
-                <li className="font-androidAssassin font-semibold text-xl dark:hover:text-pink-600">
+                <li className="font-androidAssassin font-semibold text-xl uppercase dark:hover:text-pink-600">
                   cosplay
                 </li>
               </NavLink>
             </button>
             <button onClick={navClick}>
               <NavLink to={"/events"}>
-                <li className="font-androidAssassin font-semibold text-xl dark:hover:text-pink-600">
+                <li className="font-androidAssassin font-semibold text-xl uppercase dark:hover:text-pink-600">
                   Events
                 </li>
               </NavLink>
@@ -63,17 +64,25 @@ const Navbar = () => {
 
             <button onClick={navClick}>
               <NavLink to={"/gettickets"}>
-                <li className="font-androidAssassin font-semibold text-xl dark:hover:text-pink-600">
+                <li className="font-androidAssassin font-semibold text-xl uppercase dark:hover:text-pink-600">
                   Get tickets
                 </li>
               </NavLink>
             </button>
-            <ul className="flex">
+            <ul className="flex sm:flex-col md:flex-row lg:flex-row">
               <li>
-                <DarkModeToggle
-                  darkMode={darkmodeEnabled}
-                  setDarkMode={setDarkModeEnabled}
-                />
+                <div className="relative group mx-2">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                  <button
+                    onClick={toggleTheme}
+                    className="relative px-3 py-2 bg-black rounded-lg leading-none flex items-center divide-x divide-gray-600 text-white"
+                  >
+                    <span className="flex items-center space-x-5">
+                      <DarkModeIcon />
+                    </span>
+                    {isDarkMode ? "Light Mode" : "Dark Mode"}
+                  </button>
+                </div>
               </li>
               <li>
                 <div className="relative group mx-2">

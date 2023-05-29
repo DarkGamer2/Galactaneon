@@ -10,6 +10,8 @@ import Events from "./pages/Events";
 import GetTickets from "./pages/GetTickets";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import Theme from "./context/Theme";
+import Confirmed from "./pages/Confirmed";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,7 +41,13 @@ const router = createBrowserRouter([
     path: "/signup",
     element: <SignUp />,
   },
+  {
+    path: "/confirmed",
+    element: <Confirmed />,
+  },
 ]);
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <RouterProvider router={router} />
+  <Theme>
+    <RouterProvider router={router} />
+  </Theme>
 );

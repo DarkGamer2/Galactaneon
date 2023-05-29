@@ -5,7 +5,7 @@ import welcomeWallpaper from "../assets/media/images/wp4575207-4k-galaxy-wallpap
 import Footer from "../components/Footer";
 const Home = () => {
   return (
-    <>
+    <main className="dark:bg-black text-white">
       <Navbar />
       {/* <Carousel /> */}
       <div className="">
@@ -37,7 +37,7 @@ const Home = () => {
         </div>
       </section>
       <Footer />
-    </>
+    </main>
   );
 };
 export default Home;
