@@ -31,7 +31,8 @@ const GetTickets = () => {
       .finally(() => {
         setButtonText("Confirmed"),
           setButtonColor("bg-indigo-500"),
-          successSound.play();
+          successSound.play(),
+          navigate("/confirmed");
       });
     useEffect(() => {
       document.title = "Form Submitted!";

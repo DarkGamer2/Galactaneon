@@ -14,8 +14,34 @@ router.post("/api/submit_user_info", async (req: Request, res: Response) => {
       if (err) {
         throw err;
       } else {
-        res.send(`The record of ${user} was saved successfully`);
+        const transporter = nodemailer.createTransport({
+          service: "outlook",
+          auth: {
+            user: process.env.EMAIL,
+            pass: process.env.PASSWORD,
+          },
+        });
+        const mailOptions = {
+          from: ``,
+          to: ``,
+          subject: `Has Signed Up For The Course!`,
+          text: `Hello Mr.Huggins, here are the details of the student that signed up for your defensive
+            driving course: \n
+            
+            Best Regards`,
+        };
+
+        transporter.sendMail(mailOptions, function (error, info) {
+          if (error) {
+            console.log(error);
+          } else {
+            console.log("Email sent: " + info.response);
+          }
+        });
+        console.log();
       }
+
+      res.send(`The record of ${user} was saved successfully`);
     });
   }
 });
