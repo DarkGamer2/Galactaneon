@@ -10,7 +10,7 @@ import Events from "./pages/Events";
 import GetTickets from "./pages/GetTickets";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
-import Theme from "./context/Theme";
+import{ ThemeProvider } from "./context/Theme";
 import Confirmed from "./pages/Confirmed";
 const router = createBrowserRouter([
   {
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <Theme>
+  <ThemeProvider>
     <RouterProvider router={router} />
-  </Theme>
+  </ThemeProvider>
 );

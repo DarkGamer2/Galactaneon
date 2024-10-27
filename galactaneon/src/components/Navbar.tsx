@@ -3,10 +3,11 @@ import navItemClickAudio from "../assets/media/audio/Sound Effect sci fi beep el
 import LoginIcon from "@mui/icons-material/Login";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import { NavLink } from "react-router-dom";
-import { ThemeContext } from "../context/Theme";
+import { useTheme } from "../context/Theme";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from '@mui/icons-material/LightMode';
 const Navbar = () => {
-  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
+  const {theme,toggleTheme}=useTheme();
 
   const navLinkAudio = new Audio(navItemClickAudio);
 
@@ -22,7 +23,7 @@ const Navbar = () => {
   //   navLinkAudio.pause();
   // };
   return (
-    <header className={isDarkMode ? "dark" : ""}>
+    <header className={`w-full shadow ${theme === 'dark' ? 'dark' : 'light'}`}>
       <div className="dark:bg-black py-3">
         <nav>
           <ul className="flex uppercase items-center justify-between tracking-wide dark:text-blue-600 text-black sm:flex-col md:flex-row lg:flex-row">
@@ -77,10 +78,19 @@ const Navbar = () => {
                     onClick={toggleTheme}
                     className="relative px-3 py-2 bg-black rounded-lg leading-none flex items-center divide-x divide-gray-600 text-white"
                   >
-                    <span className="flex items-center space-x-5">
-                      <DarkModeIcon />
-                    </span>
-                    {isDarkMode ? "Light Mode" : "Dark Mode"}
+                   <span className="flex items-center space-x-5">
+  {theme === "dark" ? (
+    <>
+    <LightModeIcon /> Light Mode
+    </>
+  ) : (
+    <>
+      
+    <DarkModeIcon /> Dark Mode
+    </>
+  )}
+</span>
+                   
                   </button>
                 </div>
               </li>

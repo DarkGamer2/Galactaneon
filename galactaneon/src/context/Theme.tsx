@@ -1,18 +1,50 @@
-import { createContext, useState } from "react";
+// src/context/theme/ThemeContext.tsx
+import React, { createContext, useState, ReactNode, useContext, useEffect } from 'react';
 
-export const ThemeContext = createContext({});
-const Theme = ({ children }: any) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+interface ThemeContextType {
+  theme: string;
+  toggleTheme: () => void;
+}
+
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+
+export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  // Retrieve the theme from local storage or default to 'light'
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  const [theme, setTheme] = useState<string>(savedTheme);
+
+  useEffect(() => {
+    // Save the current theme to local storage whenever it changes
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   const toggleTheme = () => {
-    setIsDarkMode((prevMode) => !prevMode);
+    setTheme((current) => (current === 'light' ? 'dark' : 'light'));
   };
 
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+  }, [theme]);
+
+  
   return (
-    <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
 };
 
-export default Theme;
+export const useTheme = () => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
+  return context;
+};
+
+export default ThemeContext; // Export the ThemeContext

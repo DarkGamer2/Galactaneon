@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Pink neon glow on hover */
+.neon-input:hover {
+  box-shadow: 0 0 20px 5px rgba(255, 105, 180, 0.9);
+}
+
+/* Cyan neon glow by default on focus */
+.neon-input:focus {
+  box-shadow: 0 0 20px 5px rgba(0, 255, 255, 0.9);
+}
+
+/* Intense red glow for invalid email */
+.neon-input[type="email"]:invalid {
+  box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.9);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Intense green glow for valid email */
+.neon-input[type="email"]:valid {
+  box-shadow: 0 0 20px 5px rgba(0, 255, 0, 0.9);
+  transition: box-shadow 0.3s ease-in-out;
+}
+

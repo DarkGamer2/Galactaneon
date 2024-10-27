@@ -3,9 +3,11 @@ import Navbar from "../components/Navbar";
 import GalaxyWallpaper from "../assets/media/images/uwp3583259.jpeg";
 import welcomeWallpaper from "../assets/media/images/wp4575207-4k-galaxy-wallpapers.jpg";
 import Footer from "../components/Footer";
+import { useTheme } from "../context/Theme";
 const Home = () => {
+  const { theme } = useTheme();
   return (
-    <main className="dark:bg-black text-white">
+    <main className={`w-full shadow ${theme === 'dark' ? 'dark' : 'light'}`}>
       <Navbar />
       {/* <Carousel /> */}
       <div className="">
