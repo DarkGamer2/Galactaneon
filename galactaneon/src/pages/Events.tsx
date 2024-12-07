@@ -5,6 +5,7 @@ import BeachParty from "../assets/media/images/160998-425x282r1-Teens-on-the-bea
 import { useTheme } from "../context/Theme";
 import Section from "../components/Section";
 import { AnimatePresence, motion } from "framer-motion";
+import DetailsButton from "../components/DetailsButton";
 
 const Events = () => {
   const { theme } = useTheme();
@@ -85,6 +86,9 @@ const Events = () => {
                   wonders of our galaxy. Embark on a journey that will take you
                   through the stars, planets, and beyond.
                 </motion.p>
+                <div className="flex justify-center">
+                  <DetailsButton/>
+                </div>
               </Section>
               <Section video="/src/assets/media/videos/Kygo - Love Me Now (Official Video) ft. Zoe Wees.mp4" setVideo={setVideo} setBgOpacity={setBgOpacity}>
               <motion.h2
@@ -110,16 +114,19 @@ const Events = () => {
                   wonders of our galaxy. Embark on a journey that will take you
                   through the stars, planets, and beyond.
                 </motion.p>
+                <div className="flex justify-center">
+                  <DetailsButton/>
+                </div>
               </Section>
-              <Section video="*" setVideo={setVideo} setBgOpacity={setBgOpacity}>
+              <Section video="/src/assets/media/videos/gamingroom.mp4" setVideo={setVideo} setBgOpacity={setBgOpacity}>
                   <motion.h2  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.6 }}
-                  className="uppercase text-cyan-500 text-4xl md:text-6xl lg:text-8xl font-androidAssassin"
+                  className="uppercase text-purple-500 text-4xl md:text-6xl lg:text-8xl font-androidAssassin"
                   style={{
-                    textShadow: `0 0 5px rgba(0, 255, 255, 1), 
-                    0 0 10px rgba(0, 255, 255, 0.8), 
-                    0 0 15px rgba(0, 255, 255, 0.6)`,
+                    textShadow: `0 0 5px rgba(178, 0, 255, 1.0), 
+                    0 0 10px rgba(178, 0, 255, 0.8), 
+                    0 0 15px rgba(178, 0, 255, 0.6)`,
                   }}>
                     Gamers Zone
                   </motion.h2>
@@ -131,6 +138,8 @@ const Events = () => {
                 >
                   Compete against the best in eSports titles and RPG's
                 </motion.p>
+                <div className="flex justify-center">
+                  <DetailsButton/></div>
               </Section>
             </section>
           </div>

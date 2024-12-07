@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -7,14 +7,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// import "../styles.css";
-import GalaxyVid from "../assets/media/videos/AnimatedDeficientAlleycat-mobile.mp4";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
 
 const Carousel = () => {
   return (
-    <>
+    <div className="w-full px-4 md:px-0">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -30,18 +28,40 @@ const Carousel = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <video src="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_10mb.mp4" />
+          <video
+            className="w-full h-auto object-cover"
+            src="https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_10mb.mp4"
+            autoPlay
+            muted
+            loop
+          />
         </SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        <SwiperSlide className="flex justify-center items-center">
+          <p className="text-xl md:text-2xl lg:text-3xl">Slide 2</p>
+        </SwiperSlide>
+        <SwiperSlide className="flex justify-center items-center">
+          <p className="text-xl md:text-2xl lg:text-3xl">Slide 3</p>
+        </SwiperSlide>
+        <SwiperSlide className="flex justify-center items-center">
+          <p className="text-xl md:text-2xl lg:text-3xl">Slide 4</p>
+        </SwiperSlide>
+        <SwiperSlide className="flex justify-center items-center">
+          <p className="text-xl md:text-2xl lg:text-3xl">Slide 5</p>
+        </SwiperSlide>
+        <SwiperSlide className="flex justify-center items-center">
+          <p className="text-xl md:text-2xl lg:text-3xl">Slide 6</p>
+        </SwiperSlide>
+        <SwiperSlide className="flex justify-center items-center">
+          <p className="text-xl md:text-2xl lg:text-3xl">Slide 7</p>
+        </SwiperSlide>
+        <SwiperSlide className="flex justify-center items-center">
+          <p className="text-xl md:text-2xl lg:text-3xl">Slide 8</p>
+        </SwiperSlide>
+        <SwiperSlide className="flex justify-center items-center">
+          <p className="text-xl md:text-2xl lg:text-3xl">Slide 9</p>
+        </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 };
 
