@@ -38,3 +38,19 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+/* Ensure the image inside each SwiperSlide takes full container width and height */
+.carousel-image {
+  width: 100%; /* Makes the image fill the container's width */
+  height: 100%; /* Makes the image fill the container's height */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  object-position: center; /* Keeps the image centered */
+}
+
+/* Optionally, you may want to ensure that SwiperSlide takes full height of its container */
+.mySwiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure each slide takes up full height */
+}
