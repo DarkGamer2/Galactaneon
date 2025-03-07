@@ -45,6 +45,10 @@ const router = createBrowserRouter([
     path: "/confirmed",
     element: <Confirmed />,
   },
+  {
+    path: "/success",
+    element: <Confirmed />,
+  },
 ]);
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <ThemeProvider>

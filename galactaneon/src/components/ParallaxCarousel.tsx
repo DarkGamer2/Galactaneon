@@ -41,8 +41,9 @@ const ParallaxCarousel = () => {
             <h3 className="dark:text-white text-center">Girl Cosplay</h3>
           </div>
           <div className="subtitle" data-swiper-parallax="-200"></div>
-          <div className="text" data-swiper-parallax="-100">
+          <div className="text flex" data-swiper-parallax="-100">
             <img src={GirlCosplay} alt="Girl Cosplay" className="carousel-image" />
+            <p className="dark:text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nisi quisquam culpa distinctio quos voluptatibus maiores doloribus quasi vitae qui! Autem obcaecati aspernatur voluptates maiores magnam! Sint nesciunt vel doloribus?</p>
           </div>
         </SwiperSlide>
         <SwiperSlide>
