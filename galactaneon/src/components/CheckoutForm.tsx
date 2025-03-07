@@ -1,5 +1,5 @@
 import {useCheckout} from '@stripe/react-stripe-js';
-
+import React from 'react';
 const CheckoutForm = () => {
   const checkout = useCheckout();
   console.log(checkout);
