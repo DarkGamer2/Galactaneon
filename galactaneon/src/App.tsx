@@ -9,5 +9,6 @@ function App() {
     </ThemeProvider>
   );
 }
+console.log("App running");
 
 export default App;
