@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import Stripe from "stripe";
+import authRoutes from './routes/authRoutes';
 const app = express();
 dotenv.config();
 const PORT = 4600;
@@ -52,4 +53,6 @@ app.post('/my-webhook',express.raw({type: 'application/json'}), async (req, res)
         return res.sendStatus(400);
     }
 });
+
+app.use("/api/auth", authRoutes);
 app.listen(PORT, () => console.log(`Server is connected to PORT: ${PORT}`));

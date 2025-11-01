@@ -6,4 +6,6 @@ export interface userinfo extends mongoose.Document {
   lastName: string;
   emailAddress: string;
   phoneNumber: string;
+  isAdmin?: boolean;
+  password?: string;
 }

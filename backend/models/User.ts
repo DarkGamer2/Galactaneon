@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
-import { userinfo } from "../interfaces/User";
+import { userinfo } from "../interfaces/UserInterface";
 // mongoose.connect();
 
 const userInfoSchema = new Schema<userinfo>({
@@ -9,8 +9,10 @@ const userInfoSchema = new Schema<userinfo>({
   lastName: String,
   emailAddress: String,
   phoneNumber: String,
+  isAdmin: { type: Boolean, default: false },
+  password: String,
 });
 
 const User = mongoose.model<userinfo>("User", userInfoSchema);
 
-module.exports=User;
+export default User;
