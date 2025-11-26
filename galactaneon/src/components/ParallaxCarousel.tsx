@@ -2,7 +2,7 @@ import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import GirlCosplay from "../assets/media/images/Miku-Fashion-Subculture-Dress-Uniform-Outfit-Anime-Cosplay-Costumes.jpg_640x640Q90.jpg_.avif"
-import ValorantCosplay from "../assets/media/images/fade-cosplay-v0-cm83kyh26fra1.webp"
+import ValorantCosplay from "../assets/media/images/fade-cosplay-v0-cm83kyh26fra1.webp";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -38,17 +38,17 @@ const ParallaxCarousel = () => {
         ></div>
         <SwiperSlide>
           <div className="title" data-swiper-parallax="-300">
-            <h3 className="dark:text-white text-center">Girl Cosplay</h3>
+            <h3 className="dark:text-white text-center text-3xl">Girl Cosplay</h3>
           </div>
           <div className="subtitle" data-swiper-parallax="-200"></div>
           <div className="text flex" data-swiper-parallax="-100">
             <img src={GirlCosplay} alt="Girl Cosplay" className="carousel-image" />
-            <p className="dark:text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nisi quisquam culpa distinctio quos voluptatibus maiores doloribus quasi vitae qui! Autem obcaecati aspernatur voluptates maiores magnam! Sint nesciunt vel doloribus?</p>
+            <p className="dark:text-white text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nisi quisquam culpa distinctio quos voluptatibus maiores doloribus quasi vitae qui! Autem obcaecati aspernatur voluptates maiores magnam! Sint nesciunt vel doloribus?</p>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="title" data-swiper-parallax="-300">
-            <h3 className="dark:text-white text-center">Valorant Cosplay</h3>
+            <h3 className="dark:text-white text-center text-3xl">Valorant Cosplay</h3>
           </div>
           <div className="subtitle" data-swiper-parallax="-200"></div>
           <div className="text" data-swiper-parallax="-100">
